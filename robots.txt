@@ -1,0 +1,20 @@
+# https://www.seafreightprices.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Editorial and reference content is open to AI answer engines.
+# Rate data behind /api/ is not.
+User-agent: GPTBot
+Allow: /insights/
+Disallow: /api/
+
+User-agent: PerplexityBot
+Allow: /insights/
+Disallow: /api/
+
+User-agent: ClaudeBot
+Allow: /insights/
+Disallow: /api/
+
+Sitemap: https://www.seafreightprices.com/sitemap.xml

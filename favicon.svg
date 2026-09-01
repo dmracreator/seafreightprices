@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="SeaFreightPrices.com">
+  <rect width="64" height="64" rx="14" fill="#0F2244"/>
+  <g fill="#2F7DD6">
+    <rect x="14" y="34" width="7" height="16" rx="2"/>
+    <rect x="25" y="26" width="7" height="24" rx="2"/>
+    <rect x="36" y="30" width="7" height="20" rx="2"/>
+  </g>
+  <path d="M14 24 L25 16 L36 21 L50 12" fill="none" stroke="#F7F5F0" stroke-width="3.4"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="50" cy="12" r="4" fill="#F7F5F0"/>
+</svg>
