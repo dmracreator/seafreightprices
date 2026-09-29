@@ -84,7 +84,7 @@ explorer, the filters, the charts and the command palette on top.
 │                               methodology, access, contact
 ├── insights/
 │   ├── index.html              Article hub — crawlable list of everything
-│   └── <slug>/index.html       One static page per article (10 of them)
+│   └── <slug>/index.html       One static page per article (13 of them)
 ├── assets/
 │   ├── css/styles.css          The entire design system, one file
 │   ├── js/
@@ -97,6 +97,7 @@ explorer, the filters, the charts and the command palette on top.
 │   ├── check-links.mjs         Internal link + metadata checker (runs in CI)
 │   ├── build-insights.py       Optional: regenerate all article pages
 │   └── content/
+│       ├── PUBLISHING-PROMPT.md Ready-to-paste prompts for new articles
 │       ├── STYLE-GUIDE.md      House style for Insights articles
 │       ├── articles.json       Article metadata (titles, SEO, dates)
 │       └── fragments/          Article bodies, one per slug
@@ -140,6 +141,13 @@ side of the desk, a rising rate is the bad news.
 
 ## Publishing an article
 
+The fastest route is [`scripts/content/PUBLISHING-PROMPT.md`](scripts/content/PUBLISHING-PROMPT.md)
+— ready-to-paste prompts for a weekly market-news run and a monthly evergreen
+guide, including the research, the file edits and the checks. Paste one into a
+new Claude session with this repo connected.
+
+The manual process is below.
+
 Two ways in. Both end with the same committed HTML.
 
 **By hand.** Copy an existing `insights/<slug>/index.html` and replace the
@@ -164,6 +172,36 @@ header, breadcrumbs, schema, related reads — can be applied to all ten article
 at once rather than ten times.
 
 Either way, run `node scripts/check-links.mjs` before committing.
+
+### Evergreen guides vs. market news
+
+Two kinds of content share the Insights section, and they are treated
+differently on purpose.
+
+**Evergreen guides** (Guides, Methodology, Ports, Contracts, Analysis,
+Capacity, Regulation, Commodities) are ~1,500 words, carry `Article` schema,
+and are written to stay accurate for a year or more. They are the pages
+expected to rank.
+
+**Market news** is dated reporting on what actually happened in a given week.
+Those pieces are shorter (700–950 words), carry `NewsArticle` schema with a
+`citation` list, and are marked in `articles.json` with:
+
+```json
+"type": "news",
+"asOf": "week ending 3 September 2026",
+"sources": ["Drewry World Container Index, assessment for 3 September 2026.", "…"]
+```
+
+The generator then adds a visible "market data as of" line at the top of the
+page and a sources block at the foot, so a reader arriving six months later
+can see how fresh the piece is and trace every third-party figure.
+
+Two rules for news pieces. Attribute every number to the organisation that
+published it, by name, in the prose — Drewry, Freightos, the Panama Canal
+Authority. And never present a third-party figure as a SeaFreightPrices
+benchmark; the sources block says so explicitly, and that separation is what
+keeps the independence claim on the methodology page defensible.
 
 House style, briefly: British English; written practitioner-to-practitioner; no
 invented statistics; worked examples labelled as illustrative; a key takeaways
@@ -204,8 +242,9 @@ the methodology page is the most valuable thing this brand owns.
 
 - One indexable URL per article, no hash routes in the editorial section.
 - Unique title, meta description, canonical and Open Graph tags per page.
-- `Article`, `BreadcrumbList` and `FAQPage` structured data on every article;
-  `Organization` and `WebSite` on the home page; `CollectionPage` on the hub.
+- `Article` (or `NewsArticle` for dated reporting), `BreadcrumbList` and
+  `FAQPage` structured data on every article; `Organization` and `WebSite` on
+  the home page; `CollectionPage` on the hub.
 - Exactly one `<h1>` per page. Inside the SPA, only the home view carries it —
   the other views open with `<h2 class="route-h1">` at the same visual size.
 - `sitemap.xml` and `robots.txt` are in sync with what actually exists, and CI
@@ -261,7 +300,12 @@ One-time setup:
 ## Before going live
 
 - [ ] Replace the sample data in `assets/js/data.js` with real feeds, or keep
-      every "sample data" label in place.
+      every "sample data" label in place. **Note the current mismatch:** the
+      Market news articles cite real published market levels (Drewry had the
+      WCI at $4,465 per 40ft on 3 September 2026), while the rate explorer
+      still shows generated sample figures around $2,000–2,500. Wire up the
+      real feed, or the two halves of the site will contradict each other in
+      front of a customer.
 - [ ] Regenerate `assets/img/` from the real brand assets — the current icons,
       logo and Open Graph card are generated placeholders and do not use the
       brand typeface.

@@ -403,7 +403,7 @@ renderExplorer();
    ============================================================ */
 document.getElementById('homePosts').innerHTML=ARTICLES.slice(0,3).map(function(a){
   return '<a class="post" href="/insights/'+a.slug+'/">'+
-    '<span class="thumb" aria-hidden="true"></span>'+
+    '<span class="thumb"><img src="/assets/img/insights/'+a.slug+'.svg" alt="" loading="lazy" decoding="async" width="640" height="400"></span>'+
     '<span class="body">'+
       '<span class="meta"><span>'+a.cat+'</span><span aria-hidden="true">·</span><span>'+a.shown+'</span></span>'+
       '<span class="h3">'+a.title+'</span>'+

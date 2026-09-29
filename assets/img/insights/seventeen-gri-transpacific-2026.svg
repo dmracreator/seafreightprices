@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" role="img" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="b8762" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F2244"/>
+      <stop offset="100%" stop-color="#1E4079"/>
+    </linearGradient>
+    <pattern id="d8762" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.1" fill="#FFFFFF" fill-opacity="0.13"/>
+    </pattern>
+    <linearGradient id="f8762" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2F7DD6" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#2F7DD6" stop-opacity="0.04"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#b8762)"/>
+  <rect width="640" height="400" fill="url(#d8762)"/>
+  <path d="M62.0 292.0 L62.0 268.0 L102.0 268.0 L102.0 276.0 L136.0 276.0 L136.0 252.0 L176.0 252.0 L176.0 260.0 L210.0 260.0 L210.0 236.0 L250.0 236.0 L250.0 244.0 L284.0 244.0 L284.0 220.0 L324.0 220.0 L324.0 228.0 L358.0 228.0 L358.0 204.0 L398.0 204.0 L398.0 212.0 L432.0 212.0 L432.0 188.0 L472.0 188.0 L472.0 196.0 L506.0 196.0 L506.0 172.0 L546.0 172.0 L546.0 180.0 L580.0 180.0 L580.0 298 L62.0 298 Z" fill="url(#f8762)"/>
+  <path d="M62.0 292.0 L62.0 268.0 L102.0 268.0 L102.0 276.0 L136.0 276.0 L136.0 252.0 L176.0 252.0 L176.0 260.0 L210.0 260.0 L210.0 236.0 L250.0 236.0 L250.0 244.0 L284.0 244.0 L284.0 220.0 L324.0 220.0 L324.0 228.0 L358.0 228.0 L358.0 204.0 L398.0 204.0 L398.0 212.0 L432.0 212.0 L432.0 188.0 L472.0 188.0 L472.0 196.0 L506.0 196.0 L506.0 172.0 L546.0 172.0 L546.0 180.0 L580.0 180.0" fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <line x1="50" y1="298" x2="590" y2="298" stroke="#5C82B8" stroke-width="2"/>
+  <circle cx="580" cy="180" r="10" fill="#7FB0E6"/>
+</svg>

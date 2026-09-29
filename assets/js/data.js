@@ -162,6 +162,21 @@ var GLOSSARY=[
    readers land on the article itself.
    ------------------------------------------------------------ */
 var ARTICLES=[
+ {slug:'transpacific-asia-europe-rate-divergence-september-2026',
+  title:'Flat index, split market: transpacific climbs as Asia–Europe slides',
+  cat:'Market news', date:'2026-09-08', shown:'8 September 2026', mins:6,
+  dek:'Drewry\'s composite index did not move last week. Underneath it, transpacific rates set fresh highs while Shanghai–Genoa fell 10% — the clearest case this year for reading corridors rather than composites.'},
+
+ {slug:'panama-canal-transit-slots-cut-september-2026',
+  title:'Panama Canal cuts daily transit slots as watershed rainfall disappoints',
+  cat:'Market news', date:'2026-09-05', shown:'5 September 2026', mins:6,
+  dek:'The Authority has switched from limiting how deep ships load to limiting how many transit at all. For Asia–US East Coast services routed through the canal, that is the more consequential lever.'},
+
+ {slug:'seventeen-gri-transpacific-2026',
+  title:'Seventeen rate increases in eight months: reading the transpacific GRI cadence',
+  cat:'Market news', date:'2026-09-04', shown:'4 September 2026', mins:6,
+  dek:'An increase that sticks does not need repeating a fortnight later. The frequency, not the level, is what the transpacific is telling you — and the exposure it creates is about quote validity.'},
+
  {slug:'how-to-read-a-container-freight-rate-index',
   title:'How to read a container freight rate index (and where it misleads you)',
   cat:'Methodology', date:'2026-08-26', shown:'26 August 2026', mins:9,

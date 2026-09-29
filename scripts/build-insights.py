@@ -173,7 +173,8 @@ def build_article(a):
             ],
         },
         {
-            "@type": "Article",
+            # Dated market reporting is a NewsArticle; evergreen guidance is an Article.
+            "@type": "NewsArticle" if a.get("type") == "news" else "Article",
             "headline": a["title"][:110],
             "description": desc,
             "datePublished": a["date"],
@@ -194,6 +195,8 @@ def build_article(a):
             },
         },
     ]
+    if a.get("type") == "news" and a.get("sources"):
+        graph[-1]["citation"] = [{"@type": "CreativeWork", "name": s} for s in a["sources"]]
     if faq:
         graph.append({
             "@type": "FAQPage",
@@ -227,6 +230,29 @@ def build_article(a):
     </section>
 """
 
+    # Dated reporting carries a visible as-of line and a source list, so a
+    # reader arriving months later can see immediately how fresh it is.
+    is_news = a.get("type") == "news"
+    dateline = ""
+    if is_news and a.get("asOf"):
+        dateline = f"""
+        <p class="asof"><strong>Market data as of {a['asOf']}.</strong>
+        Rates move weekly. For the current position on your own lanes, use the
+        <a href="/#/rates">rate explorer</a>.</p>
+"""
+    sources_note = ""
+    if is_news and a.get("sources"):
+        items = "".join(f"<li>{s}</li>" for s in a["sources"])
+        sources_note = f"""
+          <div class="sources">
+            <h2>Sources</h2>
+            <ul>{items}</ul>
+            <p>Figures are as published by the named third parties on the dates given.
+            They are not SeaFreightPrices benchmarks; our own methodology is set out
+            on the <a href="/#/methodology">methodology page</a>.</p>
+          </div>
+"""
+
     # three related reads: same category first, then most recent
     others = [x for x in ARTICLES if x["slug"] != a["slug"]]
     others.sort(key=lambda x: (x["cat"] != a["cat"], x["date"]), reverse=False)
@@ -237,7 +263,7 @@ def build_article(a):
 
     rel_html = "\n".join(
         f"""        <a class="post" href="/insights/{r['slug']}/">
-          <span class="thumb" aria-hidden="true"></span>
+          <span class="thumb"><img src="/assets/img/insights/{r['slug']}.svg" alt="" loading="lazy" decoding="async" width="640" height="400"></span>
           <span class="body">
             <span class="meta"><span>{r['cat']}</span><span aria-hidden="true">·</span><span>{r['shown']}</span></span>
             <span class="h3">{r['title']}</span>
@@ -277,9 +303,11 @@ def build_article(a):
 
     <div class="art-layout">
       <div class="prose">
+{dateline}
 {body}
 {faq_html}
         <footer class="art-foot">
+{sources_note}
           <div class="author">
             <span class="av" aria-hidden="true">{initials}</span>
             <div>
@@ -330,8 +358,10 @@ def build_article(a):
 # ---------------------------------------------------------------- hub page
 def build_hub():
     url = SITE + "/insights/"
+    # The newest piece gets the hero card, but it stays in the list below as
+    # well — otherwise a category filter would silently hide it.
     feat = ARTICLES[0]
-    rest = ARTICLES[1:]
+    rest = ARTICLES
 
     graph = [
         {
@@ -412,7 +442,7 @@ def build_hub():
     <div class="wrap">
       <h2 class="sr">Featured analysis</h2>
       <a class="featured" href="/insights/{feat['slug']}/">
-        <span class="art" aria-hidden="true"></span>
+        <span class="art"><img src="/assets/img/insights/{feat['slug']}.svg" alt="" width="640" height="400"></span>
         <span class="txt">
           <span class="meta" style="font-size:.72rem;font-family:var(--mono);color:var(--faint)">{feat['cat']} · <time datetime="{feat['date']}">{feat['shown']}</time> · {feat['mins']} min read</span>
           <h2>{feat['title']}</h2>
