@@ -130,9 +130,9 @@ var heroRange=13;
 function renderHero(r){
   if(r)heroRange=r;
   var s=HERO.slice(HERO.length-heroRange),rr=heroRange;
-  var labels=rr===52?[{at:0,t:'Sep 25'},{at:Math.floor(rr/2),t:'Feb 26'},{at:rr-1,t:'Aug 26'}]
-           :rr===26?[{at:0,t:'Feb 26'},{at:Math.floor(rr/2),t:'May 26'},{at:rr-1,t:'Aug 26'}]
-                   :[{at:0,t:'Jun 26'},{at:Math.floor(rr/2),t:'Jul 26'},{at:rr-1,t:'Aug 26'}];
+  var labels=rr===52?[{at:0,t:'Oct 25'},{at:Math.floor(rr/2),t:'Mar 26'},{at:rr-1,t:'Sep 26'}]
+           :rr===26?[{at:0,t:'Mar 26'},{at:Math.floor(rr/2),t:'Jun 26'},{at:rr-1,t:'Sep 26'}]
+                   :[{at:0,t:'Jul 26'},{at:Math.floor(rr/2),t:'Aug 26'},{at:rr-1,t:'Sep 26'}];
   var el=document.getElementById('heroChart');
   el.innerHTML=lineChart(s,{w:cw(el),h:170,pl:38,color:'#7FB0E6',labels:labels});
 }
@@ -210,9 +210,9 @@ function renderExplorer(){
   dEl.textContent=sign(wk)+'% w/w';dEl.className='delta '+cls(wk);
 
   var r=expState.range;
-  var labels=r===52?[{at:0,t:'Sep 25'},{at:26,t:'Feb 26'},{at:51,t:'Aug 26'}]
-           :r===26?[{at:0,t:'Feb 26'},{at:13,t:'May 26'},{at:25,t:'Aug 26'}]
-                  :[{at:0,t:'Jun 26'},{at:6,t:'Jul 26'},{at:12,t:'Aug 26'}];
+  var labels=r===52?[{at:0,t:'Oct 25'},{at:26,t:'Mar 26'},{at:51,t:'Sep 26'}]
+           :r===26?[{at:0,t:'Mar 26'},{at:13,t:'Jun 26'},{at:25,t:'Sep 26'}]
+                  :[{at:0,t:'Jul 26'},{at:6,t:'Aug 26'},{at:12,t:'Sep 26'}];
   var cEl=document.getElementById('expChart');
   cEl.innerHTML=lineChart(view,{w:cw(cEl),h:230,color:'var(--blue)',labels:labels});
 
@@ -289,13 +289,13 @@ renderExplorer();
    Freight Pulse
    ============================================================ */
 (function(){
-  var METERS=[['Demand vs last year','+2%',54],['Deployed capacity','+6%',72],['Booking lead time','11 days',38],['Rate pressure','Downward',30]];
+  var METERS=[['Demand vs last year','+1%',48],['Effective capacity','+9%',80],['Suez transits, week 38','48 ships',66],['Rate pressure','Downward',26]];
   document.getElementById('meters').innerHTML=METERS.map(function(m){
     return '<div class="meter"><div class="meter-top"><span>'+m[0]+'</span><b>'+m[1]+'</b></div>'+
            '<div class="meter-bar"><i class="meter-fill" style="width:'+m[2]+'%"></i></div></div>';
   }).join('');
 
-  var SENTI=[['Asia – North Europe','bad','Softening'],['Asia – Mediterranean','warn','Flat to soft'],['Transpacific East','warn','Flat'],['Transatlantic West','ok','Firming'],['Europe – W. Africa','warn','Flat'],['Asia – Middle East','ok','Firming']];
+  var SENTI=[['Asia – North Europe','bad','Softening'],['Asia – Mediterranean','bad','Softening'],['Transpacific East','warn','Flat to soft'],['Transatlantic West','warn','Flat'],['Europe – W. Africa','warn','Flat'],['Asia – Middle East','ok','Firming']];
   document.getElementById('sentiList').innerHTML=SENTI.map(function(s){
     return '<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:.87rem">'+
            '<span>'+s[0]+'</span><span class="chip chip-'+s[1]+'">'+s[2]+'</span></div>';

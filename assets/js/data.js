@@ -129,12 +129,14 @@ var PORTS=[
 ];
 
 var ARCHIVE=[
+ ['22 Sep 2026','Transpacific jumps on the rush to clear cargo before Golden Week','Issue 38'],
+ ['15 Sep 2026','Composite holds a second week as Asia\u2013Europe keeps slipping','Issue 37'],
+ ['08 Sep 2026','Flat index, split market: transpacific up, Asia\u2013Europe down','Issue 36'],
+ ['01 Sep 2026','September GRI holds on both US coasts as typhoon congestion bites','Issue 35'],
+ ['25 Aug 2026','Asia\u2013Europe softens into September as capacity returns','Issue 34'],
  ['18 Aug 2026','Capacity returns to North Europe as blank sailings unwind','Issue 33'],
  ['11 Aug 2026','Transpacific holds the line ahead of contract talks','Issue 32'],
- ['04 Aug 2026','Durban backlog spills into the Indian Ocean rotation','Issue 31'],
- ['28 Jul 2026','Peak season arrives late, and smaller than forecast','Issue 30'],
- ['21 Jul 2026','Reefer capacity tightens ahead of the citrus window','Issue 29'],
- ['14 Jul 2026','Carbon surcharges diverge sharply across carriers','Issue 28']
+ ['04 Aug 2026','Durban backlog spills into the Indian Ocean rotation','Issue 31']
 ];
 
 var DRIVERS=[
