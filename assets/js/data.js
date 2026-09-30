@@ -129,14 +129,13 @@ var PORTS=[
 ];
 
 var ARCHIVE=[
- ['22 Sep 2026','Transpacific jumps on the rush to clear cargo before Golden Week','Issue 38'],
- ['15 Sep 2026','Composite holds a second week as Asia\u2013Europe keeps slipping','Issue 37'],
- ['08 Sep 2026','Flat index, split market: transpacific up, Asia\u2013Europe down','Issue 36'],
- ['01 Sep 2026','September GRI holds on both US coasts as typhoon congestion bites','Issue 35'],
- ['25 Aug 2026','Asia\u2013Europe softens into September as capacity returns','Issue 34'],
- ['18 Aug 2026','Capacity returns to North Europe as blank sailings unwind','Issue 33'],
- ['11 Aug 2026','Transpacific holds the line ahead of contract talks','Issue 32'],
- ['04 Aug 2026','Durban backlog spills into the Indian Ocean rotation','Issue 31']
+ ['22 Sep 2026','Transpacific jumps on the rush to clear cargo before Golden Week','Issue 38','transpacific-jumps-before-golden-week'],
+ ['15 Sep 2026','Composite holds a second week as Asia\u2013Europe keeps slipping','Issue 37','composite-holds-as-asia-europe-slips'],
+ ['08 Sep 2026','Flat composite, split market: transpacific up, Asia\u2013Europe down','Issue 36','flat-index-split-market'],
+ ['01 Sep 2026','Composite dips as transpacific cools into the September GRI','Issue 35','composite-dips-before-the-september-gri'],
+ ['25 Aug 2026','Transpacific up 9% on both coasts as Panama surcharges are filed','Issue 34','transpacific-up-nine-percent-panama-surcharges-filed'],
+ ['18 Aug 2026','Shanghai\u2013New York jumps 10% while Asia\u2013Europe keeps sliding','Issue 33','shanghai-new-york-jumps-ten-percent'],
+ ['11 Aug 2026','Index rebounds after a three-week slide as transpacific increases stick','Issue 32','index-rebounds-after-three-week-slide']
 ];
 
 var DRIVERS=[

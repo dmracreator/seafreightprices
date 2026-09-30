@@ -47,7 +47,7 @@ def header(active=""):
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span></button>
     <nav class="nav-links" id="navLinks" aria-label="Primary">
       <a href="/#/rates">Rates &amp; lanes</a>
-      <a href="/#/pulse">Freight Pulse</a>
+      <a href="/freight-pulse/"{cl('pulse')}>Freight Pulse</a>
       <a href="/#/ports">Port Watch</a>
       <a href="/#/outlook">Rate Outlook</a>
       <a href="/insights/"{cl('insights')}>Insights</a>
@@ -77,7 +77,7 @@ FOOTER = """<footer class="site">
       </div>
       <div class="foot-col">
         <h2>Products</h2>
-        <a href="/#/pulse">Freight Pulse</a>
+        <a href="/freight-pulse/">Freight Pulse</a>
         <a href="/insights/">Insights</a>
         <a href="/#/access">Access &amp; pricing</a>
         <a href="/#/access">API &amp; data feeds</a>
@@ -497,13 +497,239 @@ def build_hub():
     print("  ✓ insights/index.html")
 
 
+# ---------------------------------------------------------------- freight pulse
+# The weekly briefing archive. Deliberately a different shape from Insights:
+# a numbers-first digest of one week, not analysis. Where a week also produced
+# a long-form piece, the issue links out to it rather than repeating it.
+PULSE = json.load(open(os.path.join(HERE, "content", "pulse.json"), encoding="utf-8"))
+
+
+def pulse_numbers_table(rows):
+    def cell(pct):
+        if pct > 0:
+            return f'<span class="delta up">+{pct}%</span>'
+        if pct < 0:
+            return f'<span class="delta down">−{abs(pct)}%</span>'
+        return '<span class="delta flat">flat</span>'
+    body = "\n".join(
+        f"""            <tr><th scope="row">{name}</th><td class="num">{level}</td><td class="num">{cell(pct)}</td></tr>"""
+        for name, level, pct in rows)
+    return f"""        <div class="table-wrap">
+          <table>
+            <caption>Drewry World Container Index, spot, 40ft, week-on-week.</caption>
+            <thead><tr><th scope="col">Lane</th><th scope="col">Level</th><th scope="col">Week</th></tr></thead>
+            <tbody>
+{body}
+            </tbody>
+          </table>
+        </div>"""
+
+
+def build_pulse_issue(p, newer, older):
+    url = f"{SITE}/freight-pulse/{p['slug']}/"
+    title = f"{p['headline']} | Freight Pulse {p['issue']}"
+    graph = [
+        {"@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + "/"},
+            {"@type": "ListItem", "position": 2, "name": "Freight Pulse", "item": SITE + "/freight-pulse/"},
+            {"@type": "ListItem", "position": 3, "name": f"Issue {p['issue']}"}]},
+        {"@type": "NewsArticle",
+         "headline": p["headline"][:110],
+         "description": p["metaDescription"],
+         "datePublished": p["date"], "dateModified": p["date"],
+         "inLanguage": "en", "url": url,
+         "mainEntityOfPage": {"@type": "WebPage", "@id": url},
+         "articleSection": "Freight Pulse",
+         "keywords": ", ".join(p["keywords"]),
+         "isPartOf": {"@type": "PublicationIssue", "issueNumber": p["issue"],
+                      "name": "Freight Pulse"},
+         "image": SITE + "/assets/img/insights/freight-pulse.svg",
+         "citation": [{"@type": "CreativeWork", "name": s} for s in p["sources"]],
+         "author": {"@type": "Organization", "name": AUTHORS["market"][0], "url": SITE + "/#/methodology"},
+         "publisher": {"@type": "Organization", "name": "SeaFreightPrices.com", "url": SITE + "/",
+                       "logo": {"@type": "ImageObject", "url": SITE + "/assets/img/logo.png"}}},
+    ]
+    extra = '<script type="application/ld+json">\n%s\n</script>\n' % json.dumps(
+        {"@context": "https://schema.org", "@graph": graph}, indent=2, ensure_ascii=False)
+
+    bullets = "\n".join(f"          <li>{b}</li>" for b in p["bullets"])
+    sources = "".join(f"<li>{s}</li>" for s in p["sources"])
+    related = ""
+    if p.get("related"):
+        related = f"""        <div class="callout">
+          <h3>Goes deeper</h3>
+          <p><a href="{p['related']['url']}">{p['related']['label']}</a></p>
+        </div>
+"""
+    nav = []
+    if older:
+        nav.append(f'<a class="btn btn-ghost btn-sm" href="/freight-pulse/{older["slug"]}/"><span aria-hidden="true">←</span> Issue {older["issue"]}</a>')
+    nav.append('<a class="btn btn-ghost btn-sm" href="/freight-pulse/">All issues</a>')
+    if newer:
+        nav.append(f'<a class="btn btn-ghost btn-sm" href="/freight-pulse/{newer["slug"]}/">Issue {newer["issue"]} <span aria-hidden="true">→</span></a>')
+
+    page = head(title, p["metaDescription"], url, "article", extra) + f"""{header('pulse')}
+
+<main id="main">
+<article>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/freight-pulse/">Freight Pulse</a></li>
+        <li><span aria-current="page">Issue {p['issue']}</span></li>
+      </ol>
+    </nav>
+
+    <header class="art-head">
+      <span class="pill">Freight Pulse · Issue {p['issue']}</span>
+      <h1>{p['headline']}</h1>
+      <p class="dek">{p['dek']}</p>
+      <div class="art-meta">
+        <span class="who">{AUTHORS['market'][0]}</span>
+        <span aria-hidden="true">·</span>
+        <time datetime="{p['date']}">{p['shown']}</time>
+        <span aria-hidden="true">·</span>
+        <span>{p['mins']} min read</span>
+      </div>
+    </header>
+
+    <div class="prose" style="max-width:74ch">
+        <p class="asof"><strong>Index levels assessed {p['assessed']}.</strong>
+        This is the weekly briefing as it was published — it is not updated afterwards.
+        For the current position on your lanes, use the <a href="/#/rates">rate explorer</a>.</p>
+
+        <h2 id="the-week-in-numbers">The week in numbers</h2>
+{pulse_numbers_table(p['numbers'])}
+
+        <h2 id="what-moved">What moved, and why</h2>
+        <ul>
+{bullets}
+        </ul>
+
+        <h2 id="what-it-meant">What it meant for a quote</h2>
+        <p>{p['takeaway']}</p>
+{related}
+        <div class="sources">
+          <h2>Sources</h2>
+          <ul>{sources}</ul>
+          <p>Figures are as published by the named third parties on the dates given.
+          They are not SeaFreightPrices benchmarks; our own methodology is set out
+          on the <a href="/#/methodology">methodology page</a>.</p>
+        </div>
+
+        <nav class="issue-nav" aria-label="Freight Pulse issues">
+          {" ".join(nav)}
+        </nav>
+    </div>
+  </div>
+</article>
+</main>
+
+{FOOTER}
+<script src="/assets/js/insights.js" defer></script>
+</body>
+</html>
+"""
+    out = os.path.join(ROOT, "freight-pulse", p["slug"])
+    os.makedirs(out, exist_ok=True)
+    open(os.path.join(out, "index.html"), "w", encoding="utf-8").write(page)
+    print(f"  ✓ issue {p['issue']:<3} {p['slug']}")
+
+
+def build_pulse_hub():
+    url = SITE + "/freight-pulse/"
+    graph = [
+        {"@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + "/"},
+            {"@type": "ListItem", "position": 2, "name": "Freight Pulse"}]},
+        {"@type": "CollectionPage", "@id": url, "url": url,
+         "name": "Freight Pulse — weekly freight market briefing",
+         "description": "The archive of Freight Pulse, the weekly container market briefing: what moved on the major corridors, what drove it, and what it means for a quote.",
+         "inLanguage": "en",
+         "isPartOf": {"@type": "WebSite", "url": SITE + "/", "name": "SeaFreightPrices.com"},
+         "hasPart": [{"@type": "NewsArticle", "headline": p["headline"],
+                      "url": f"{SITE}/freight-pulse/{p['slug']}/",
+                      "datePublished": p["date"], "description": p["metaDescription"]}
+                     for p in PULSE]},
+    ]
+    extra = '<script type="application/ld+json">\n%s\n</script>\n' % json.dumps(
+        {"@context": "https://schema.org", "@graph": graph}, indent=2, ensure_ascii=False)
+
+    rows = "\n".join(
+        f"""      <a class="hub-row" href="/freight-pulse/{p['slug']}/">
+        <span class="hub-when"><time datetime="{p['date']}">{p['shown']}</time></span>
+        <span>
+          <span class="hub-title">{p['headline']}</span>
+          <span class="hub-dek">{p['dek']}</span>
+        </span>
+        <span class="hub-cat">Issue {p['issue']} · {p['mins']} min</span>
+      </a>""" for p in PULSE)
+
+    page = head("Freight Pulse — weekly container market briefing | SeaFreightPrices.com",
+                "The weekly container market briefing for freight forwarders: what moved on the major corridors, what drove it, and what it means for the quotes on your desk. Every issue, free to read.",
+                url, "website", extra) + f"""{header('pulse')}
+
+<main id="main">
+
+  <section class="hub-hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb" style="padding-top:0;padding-bottom:22px">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><span aria-current="page">Freight Pulse</span></li>
+        </ol>
+      </nav>
+      <div class="hub-lead">
+        <div>
+          <span class="eyebrow">Freight Pulse</span>
+          <h1 style="font-size:clamp(2.1rem,4.4vw,3.2rem);margin:16px 0 18px">The market, in the ten minutes you have.</h1>
+          <p class="lede">Every Tuesday at 07:00 CET: what moved on the lanes you quote, which ports are tightening, and the two or three developments worth acting on. Every issue stays free to read.</p>
+        </div>
+        <div class="card">
+          <h2 style="font-size:1rem">Get it in your inbox</h2>
+          <p style="font-size:.89rem;color:var(--muted);margin-top:8px">Freight Pulse is part of the free tier. No charge, no lane limit, and you can stop any week.</p>
+          <a class="btn btn-primary btn-sm" href="/#/access" style="margin-top:18px">Subscribe free</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:26px">
+    <div class="wrap">
+      <h2 class="sr">All issues</h2>
+      <div class="hub-list">
+{rows}
+      </div>
+      <p style="font-size:.82rem;color:var(--faint);margin-top:30px">
+        Each issue reports the index levels published in that week and is not revised afterwards.
+        Figures are attributed to the organisations that published them; see the sources on each issue.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+{FOOTER}
+<script src="/assets/js/insights.js" defer></script>
+</body>
+</html>
+"""
+    os.makedirs(os.path.join(ROOT, "freight-pulse"), exist_ok=True)
+    open(os.path.join(ROOT, "freight-pulse", "index.html"), "w", encoding="utf-8").write(page)
+    print("  ✓ freight-pulse/index.html")
+
+
 # ---------------------------------------------------------------- sitemap
 def build_sitemap():
-    today = "2026-09-01"
+    today = "2026-09-29"
     urls = [(SITE + "/", today, "daily", "1.0"),
-            (SITE + "/insights/", today, "weekly", "0.9")]
+            (SITE + "/insights/", today, "weekly", "0.9"),
+            (SITE + "/freight-pulse/", today, "weekly", "0.9")]
     for a in ARTICLES:
         urls.append((f"{SITE}/insights/{a['slug']}/", a.get("modified", a["date"]), "monthly", "0.8"))
+    for p in PULSE:
+        urls.append((f"{SITE}/freight-pulse/{p['slug']}/", p["date"], "yearly", "0.6"))
     body = "\n".join(
         f"""  <url>
     <loc>{u}</loc>
@@ -524,5 +750,10 @@ if __name__ == "__main__":
     print("Building insights…")
     built = sum(build_article(a) for a in ARTICLES)
     build_hub()
+    print("Building Freight Pulse…")
+    for i, p in enumerate(PULSE):
+        build_pulse_issue(p, PULSE[i - 1] if i > 0 else None,
+                          PULSE[i + 1] if i + 1 < len(PULSE) else None)
+    build_pulse_hub()
     build_sitemap()
-    print(f"Done — {built}/{len(ARTICLES)} articles.")
+    print(f"Done — {built}/{len(ARTICLES)} articles, {len(PULSE)} Pulse issues.")

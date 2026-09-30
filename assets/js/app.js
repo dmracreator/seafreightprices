@@ -302,8 +302,10 @@ renderExplorer();
   }).join('');
 
   document.getElementById('archive').innerHTML=ARCHIVE.map(function(a){
-    return '<div class="arch-row"><span class="arch-date">'+a[0]+'</span>'+
-           '<span class="arch-title">'+a[1]+'</span><span class="arch-tag">'+a[2]+'</span></div>';
+    return '<a class="arch-row" href="/freight-pulse/'+a[3]+'/">'+
+           '<span class="arch-date">'+a[0]+'</span>'+
+           '<span class="arch-title">'+a[1]+'</span>'+
+           '<span class="arch-tag">'+a[2]+' <span aria-hidden="true">\u2192</span></span></a>';
   }).join('');
 })();
 

@@ -687,3 +687,14 @@ footer.site a:focus-visible,.ticker a:focus-visible,.index-card button:focus-vis
 .sources ul{margin:0;padding-left:1.15em;display:flex;flex-direction:column;gap:.6em;}
 .sources li{font-size:.86rem;color:var(--muted);line-height:1.6;}
 .sources > p{margin-top:16px;font-size:.8rem;color:var(--faint);line-height:1.6;}
+
+/* Previous / next navigation between Freight Pulse issues. */
+.issue-nav{
+  display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+  margin-top:2.6em;padding-top:26px;border-top:1px solid var(--line);
+}
+
+/* Archive rows link through to the full issue. */
+a.arch-row{color:inherit;transition:color .15s;}
+a.arch-row:hover .arch-title{color:var(--blue-600);}
+a.arch-row .arch-tag{white-space:nowrap;}

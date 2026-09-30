@@ -1,0 +1,455 @@
+[
+  {
+    "issue": 39,
+    "slug": "suez-capacity-returns-as-golden-week-starts",
+    "date": "2026-09-29",
+    "shown": "29 September 2026",
+    "assessed": "24 September 2026",
+    "mins": 4,
+    "headline": "Suez capacity returns just as Golden Week takes demand out",
+    "dek": "The two forces on Asia–Europe are pulling the same way. Canal transits keep climbing while the holiday removes cargo for a fortnight, and on the North Europe leg the blanking programme is not holding the line.",
+    "metaDescription": "Freight Pulse issue 39: Drewry's composite fell 1% to $4,468 as Suez transits rose to 48 a week. Asia–Europe slid again, transpacific held firm, and Golden Week blanking began.",
+    "keywords": [
+      "freight pulse",
+      "container rates week 40 2026",
+      "Suez canal transits",
+      "Golden Week blank sailings",
+      "Drewry WCI"
+    ],
+    "numbers": [
+      [
+        "Composite",
+        "$4,468",
+        -1
+      ],
+      [
+        "Shanghai – Rotterdam",
+        "$3,485",
+        -4
+      ],
+      [
+        "Shanghai – Genoa",
+        "$3,835",
+        -5
+      ],
+      [
+        "Shanghai – Los Angeles",
+        "$7,838",
+        2
+      ],
+      [
+        "Shanghai – New York",
+        "$10,373",
+        0
+      ]
+    ],
+    "bullets": [
+      "The composite fell 1% to $4,468 per 40ft, reversing the previous week's rise. Asia–Europe led it down: Shanghai–Rotterdam off 4%, Shanghai–Genoa off 5%.",
+      "Suez containership transits rose to 48 in week 38 from 41 the week before. Drewry expects that returning capacity to outweigh the blanking programme on Asia–Europe, and rates to keep falling.",
+      "Gemini restored four more loops — AE5, AE11, AE12 and ME2 — on 14 September, with the 19,000 TEU Marchen Maersk first onto the rebuilt AE5 on the 21st. Evergreen, ONE, HMM and Yang Ming had not returned as of 25 September.",
+      "Transpacific is the exception, still firm. Carriers announced 15 transpacific blank sailings for the coming week against nine the week before, and seven on Asia–Europe against three.",
+      "Mid-Autumn Festival ran 25–27 September, Golden Week runs 1–7 October, and there are three working days between them. Roughly 13% of planned October capacity on Asia to US and Europe has been blanked so far, below the 18% and 21% withdrawn at the same point last year.",
+      "Worth an hour of someone's time: the US Federal Maritime Commission has confirmed there is no three-year limitation period on complaints about detention and demurrage charges assessed on or after 16 June 2022. Invoices you wrote off may be back in scope.",
+      "Still grinding in the background — German labour disruption and low water on the Rhine in Europe, constrained transit capacity at Panama on the Atlantic side."
+    ],
+    "sources": [
+      "Drewry World Container Index, assessment for 24 September 2026, and Drewry Container Capacity Insight.",
+      "gCaptain, 16 and 24 September 2026, on Suez transits and carrier service restorations.",
+      "gCaptain, 22 September 2026, on the Federal Maritime Commission limitation period."
+    ],
+    "takeaway": "Two things to act on. If you are quoting Asia–North Europe into November, the direction of travel is against you holding a rate for long — returning canal capacity is a slower and more durable force than a blanking programme, and it is only part-way through. And get someone to pull your detention and demurrage invoices back to June 2022 before the carriers work out what the FMC decision means for their exposure."
+  },
+  {
+    "issue": 38,
+    "slug": "transpacific-jumps-before-golden-week",
+    "date": "2026-09-22",
+    "shown": "22 September 2026",
+    "assessed": "17 September 2026",
+    "mins": 4,
+    "headline": "Transpacific jumps on the rush to clear cargo before Golden Week",
+    "dek": "Shippers pulling cargo forward ahead of the holiday lifted both US coasts sharply. Asia–Europe went the other way again, with Suez services returning and demand thin.",
+    "metaDescription": "Freight Pulse issue 38: Drewry's composite rose 1% to $4,500 as Shanghai–New York jumped 7% and Shanghai–Rotterdam fell 9%. The pre-Golden Week rush in numbers.",
+    "keywords": [
+      "freight pulse",
+      "transpacific rates September 2026",
+      "pre-Golden Week rush",
+      "Asia Europe rates falling",
+      "Drewry WCI"
+    ],
+    "numbers": [
+      [
+        "Composite",
+        "$4,500",
+        1
+      ],
+      [
+        "Shanghai – Rotterdam",
+        "$3,626",
+        -9
+      ],
+      [
+        "Shanghai – Genoa",
+        "$4,016",
+        -5
+      ],
+      [
+        "Shanghai – Los Angeles",
+        "$7,712",
+        5
+      ],
+      [
+        "Shanghai – New York",
+        "$10,394",
+        7
+      ]
+    ],
+    "bullets": [
+      "The composite rose 1% to $4,500 per 40ft, driven entirely by the transpacific. Shanghai–Los Angeles gained 5% and Shanghai–New York 7%.",
+      "Asia–Europe moved the other way and harder. Shanghai–Rotterdam dropped 9% — the steepest single-week fall on the corridor this quarter — and Shanghai–Genoa 5%.",
+      "The split has two clean causes: cargo being pulled forward ahead of Golden Week on the transpacific, and the gradual return of Suez services adding effective capacity on Asia–Europe against weak demand.",
+      "Gemini added AE5, AE11, AE12 and ME2 back through the canal on 14 September, joining the AE15 and AE19 loops already restored."
+    ],
+    "sources": [
+      "Drewry World Container Index, assessment for 17 September 2026.",
+      "Carrier service restoration dates as reported in trade coverage, 14–21 September 2026."
+    ],
+    "takeaway": "A pre-holiday rush is a fortnight-long distortion, not a market turn. Cargo booked into the peak of it paid for the privilege; the same box a fortnight either side did not. If you were quoting transpacific spot that week, the honest caveat to a customer was that the level would not survive Golden Week — and it did not."
+  },
+  {
+    "issue": 37,
+    "slug": "composite-holds-as-asia-europe-slips",
+    "date": "2026-09-15",
+    "shown": "15 September 2026",
+    "assessed": "10 September 2026",
+    "mins": 3,
+    "headline": "Composite holds a second week as Asia–Europe keeps slipping",
+    "dek": "A flat headline for the second week running, and for the second week running it hides the same split. Modest transpacific gains offsetting a steady Asia–Europe bleed.",
+    "metaDescription": "Freight Pulse issue 37: Drewry's composite held at $4,476 for a second week. Transpacific edged up, Asia–Europe slipped again, and the intra-Asia index ticked higher.",
+    "keywords": [
+      "freight pulse",
+      "container spot rates mid September 2026",
+      "intra-Asia container index",
+      "Asia Europe rates",
+      "Drewry WCI"
+    ],
+    "numbers": [
+      [
+        "Composite",
+        "$4,476",
+        0
+      ],
+      [
+        "Shanghai – Rotterdam",
+        "$3,997",
+        -2
+      ],
+      [
+        "Shanghai – Genoa",
+        "$4,216",
+        -3
+      ],
+      [
+        "Shanghai – Los Angeles",
+        "$7,352",
+        2
+      ],
+      [
+        "Shanghai – New York",
+        "$9,726",
+        1
+      ]
+    ],
+    "bullets": [
+      "The composite was stable at $4,476 per 40ft for the second consecutive week.",
+      "Transpacific gains were modest rather than dramatic: Shanghai–Los Angeles up 2%, Shanghai–New York up 1%.",
+      "Asia–Europe continued to give ground, with Shanghai–Genoa down 3% and Shanghai–Rotterdam down 2%. Shanghai–Rotterdam has now fallen below $4,000.",
+      "The intra-Asia index edged up 1% to $1,323 per 40ft — worth watching if you feed the main corridors through a transhipment hub.",
+      "With demand easing and carriers still managing capacity, Drewry expected rates to stay stable the following week."
+    ],
+    "sources": [
+      "Drewry World Container Index and Intra-Asia Container Index, assessments for 10 September 2026."
+    ],
+    "takeaway": "Shanghai–Rotterdam went under $4,000 for the first time in this run. If you were sitting on a Q4 Asia–Europe tender waiting for a better number, the direction was already set by this point, and waiting was the right call. The flat composite was telling you nothing — the corridor beneath it was."
+  },
+  {
+    "issue": 36,
+    "slug": "flat-index-split-market",
+    "date": "2026-09-08",
+    "shown": "8 September 2026",
+    "assessed": "3 September 2026",
+    "mins": 4,
+    "headline": "Flat composite, split market: transpacific up, Asia–Europe down",
+    "dek": "The global number did not move. Underneath it, one corridor set fresh highs and another fell 10% in a week. The clearest case this year for reading corridors rather than composites.",
+    "metaDescription": "Freight Pulse issue 36: Drewry's composite was flat at $4,465 while Shanghai–Genoa fell 10% and Shanghai–Los Angeles rose 5%. Typhoon congestion tightened capacity on both.",
+    "keywords": [
+      "freight pulse",
+      "container rates early September 2026",
+      "typhoon port congestion China",
+      "transpacific GRI",
+      "Drewry WCI"
+    ],
+    "numbers": [
+      [
+        "Composite",
+        "$4,465",
+        0
+      ],
+      [
+        "Shanghai – Rotterdam",
+        "$4,092",
+        -5
+      ],
+      [
+        "Shanghai – Genoa",
+        "$4,368",
+        -10
+      ],
+      [
+        "Shanghai – Los Angeles",
+        "$7,185",
+        5
+      ],
+      [
+        "Shanghai – New York",
+        "$9,587",
+        3
+      ]
+    ],
+    "bullets": [
+      "The composite held at $4,465 per 40ft because the two big corridors cancelled each other out.",
+      "Shanghai–Genoa fell 10% in a single week and Shanghai–Rotterdam 5%, while Shanghai–Los Angeles rose 5% and Shanghai–New York 3%.",
+      "The 1 September general rate increase held on both US coasts — the seventeenth on the East Asia to USA lane this year, against roughly six in a normal year.",
+      "A run of typhoons since mid-July kept Chinese ports congested, tightening effective capacity on both corridors. Carriers omitted calls and rerouted through transhipment hubs, which protects schedules but displaces cargo.",
+      "Six transpacific blank sailings were announced for the following week, double the week before."
+    ],
+    "sources": [
+      "Drewry World Container Index, assessment for 3 September 2026, and Drewry Container Capacity Insight.",
+      "FreightWaves, 2 September 2026, citing Freightos rate data.",
+      "Alba, market update for September 2026, on the general rate increase count."
+    ],
+    "related": {
+      "url": "/insights/transpacific-asia-europe-rate-divergence-september-2026/",
+      "label": "Full analysis: why the two corridors split, and why two indices disagreed on the same lane"
+    },
+    "takeaway": "This was the week to stop quoting anything off a global composite. A customer waving an index at you had a 10% move on one corridor and a 5% move the other way on another, inside the same flat headline. Establish which index, which port pair and which basis before conceding a cent."
+  },
+  {
+    "issue": 35,
+    "slug": "composite-dips-before-the-september-gri",
+    "date": "2026-09-01",
+    "shown": "1 September 2026",
+    "assessed": "27 August 2026",
+    "mins": 3,
+    "headline": "Composite dips as transpacific cools into the September GRI",
+    "dek": "A quiet week before a loud one. The index gave back a little, blanking eased, and the 1 September increase lands today across seven carriers.",
+    "metaDescription": "Freight Pulse issue 35: Drewry's composite slipped 1% to $4,473 as transpacific cooled and blank sailings halved. Seven carriers filed for the 1 September GRI.",
+    "keywords": [
+      "freight pulse",
+      "September GRI 2026",
+      "container rates late August 2026",
+      "blank sailings",
+      "Drewry WCI"
+    ],
+    "numbers": [
+      [
+        "Composite",
+        "$4,473",
+        -1
+      ],
+      [
+        "Shanghai – Los Angeles",
+        "$6,818",
+        0
+      ],
+      [
+        "Shanghai – New York",
+        "$9,333",
+        -2
+      ]
+    ],
+    "bullets": [
+      "The composite eased 1% to $4,473 per 40ft, with both transpacific and Asia–Europe softer.",
+      "Shanghai–New York gave back 2% to $9,333 and Shanghai–Los Angeles was unchanged at $6,818, after several weeks of hard gains.",
+      "Blank sailings for the following week dropped to four from seven, meaning capacity was coming back rather than tightening.",
+      "CMA CGM, COSCO, Evergreen, Hapag-Lloyd, HMM, Yang Ming and ZIM all filed for a general rate increase effective today on the East Asia to USA lane.",
+      "Drewry expected a less volatile week ahead, with demand resilient and carriers still managing supply."
+    ],
+    "sources": [
+      "Drewry World Container Index, assessment for 27 August 2026, and Drewry Container Capacity Insight.",
+      "Alba, market update for September 2026, on the carriers filing the 1 September increase."
+    ],
+    "related": {
+      "url": "/insights/seventeen-gri-transpacific-2026/",
+      "label": "Full analysis: what seventeen rate increases in eight months actually tells you"
+    },
+    "takeaway": "A week where capacity was returning and rates were easing, immediately before seven carriers pushed an increase. That combination rarely holds in full. The useful question the following week was not whether the increase was announced but what proportion of it actually reached invoices."
+  },
+  {
+    "issue": 34,
+    "slug": "transpacific-up-nine-percent-panama-surcharges-filed",
+    "date": "2026-08-25",
+    "shown": "25 August 2026",
+    "assessed": "20 August 2026",
+    "mins": 4,
+    "headline": "Transpacific up 9% on both coasts as Panama surcharges are filed",
+    "dek": "The strongest week of the summer on the transpacific, with capacity down sharply month on month. Asia–Europe drifted lower, and a new cost line appeared for US East Coast cargo.",
+    "metaDescription": "Freight Pulse issue 34: Drewry's composite rose 4% to $4,526 as both transpacific legs gained 9%. Carriers filed Panama Canal surcharges on Asia–USEC effective September.",
+    "keywords": [
+      "freight pulse",
+      "transpacific rates August 2026",
+      "Panama Canal surcharge",
+      "German port strike",
+      "Drewry WCI"
+    ],
+    "numbers": [
+      [
+        "Composite",
+        "$4,526",
+        4
+      ],
+      [
+        "Shanghai – Rotterdam",
+        "$4,401",
+        -1
+      ],
+      [
+        "Shanghai – Genoa",
+        "$4,955",
+        -2
+      ],
+      [
+        "Shanghai – Los Angeles",
+        "$6,802",
+        9
+      ],
+      [
+        "Shanghai – New York",
+        "$9,507",
+        9
+      ]
+    ],
+    "bullets": [
+      "The composite rose 4% to $4,526 per 40ft, driven entirely by the transpacific. Both Shanghai–Los Angeles and Shanghai–New York gained 9%.",
+      "Capacity did most of the work. August deployment fell 9% month on month on Asia to US East Coast and 0.4% on Asia to US West Coast, with seven more blank sailings announced for the following week.",
+      "Several carriers filed Panama Canal surcharges on Asia–US East Coast and Asia–Gulf Coast effective September — a new line to check before treating an East Coast quote as all-in.",
+      "Asia–Europe drifted lower, Shanghai–Genoa off 2% and Shanghai–Rotterdam off 1%, with only two blank sailings announced.",
+      "Congestion at Shanghai and Rotterdam eased in week 33 but stayed elevated, at average waiting times of 32.3 and 25.0 hours respectively.",
+      "Labour strikes at German ports continued to hit schedule reliability, and some carriers began resuming selected Red Sea and Suez transits on improved security assessments."
+    ],
+    "sources": [
+      "Drewry World Container Index, assessment for 20 August 2026, and Drewry Container Capacity Insight, as published by Daily Cargo News, 21 August 2026."
+    ],
+    "takeaway": "The line to check here was not the rate. Several carriers filed Panama Canal surcharges on Asia–US East Coast and Gulf effective September, so any East Coast quote given in late August on an all-in basis needed re-reading. Ask for the trigger and the condition that removes it, as with any discretionary charge."
+  },
+  {
+    "issue": 33,
+    "slug": "shanghai-new-york-jumps-ten-percent",
+    "date": "2026-08-18",
+    "shown": "18 August 2026",
+    "assessed": "13 August 2026",
+    "mins": 3,
+    "headline": "Shanghai–New York jumps 10% while Asia–Europe keeps sliding",
+    "dek": "The divergence that would define September started here. A double-digit week on the US East Coast against an 8% fall into the Mediterranean.",
+    "metaDescription": "Freight Pulse issue 33: Drewry's composite edged up 1% to $4,339 as Shanghai–New York rose 10% and Shanghai–Genoa fell 8%. Ten blank sailings in each of two weeks.",
+    "keywords": [
+      "freight pulse",
+      "container rates August 2026",
+      "Shanghai New York rate",
+      "blank sailings August",
+      "Drewry WCI"
+    ],
+    "numbers": [
+      [
+        "Composite",
+        "$4,339",
+        1
+      ],
+      [
+        "Shanghai – Rotterdam",
+        "$4,425",
+        -5
+      ],
+      [
+        "Shanghai – Genoa",
+        "$5,080",
+        -8
+      ],
+      [
+        "Shanghai – Los Angeles",
+        "$6,244",
+        6
+      ],
+      [
+        "Shanghai – New York",
+        "$8,706",
+        10
+      ]
+    ],
+    "bullets": [
+      "The composite rose 1% to $4,339 per 40ft, held back by Asia–Europe even as the transpacific ran hard.",
+      "Shanghai–New York gained 10% and Shanghai–Los Angeles 6%.",
+      "Asia–Europe fell for another week, Shanghai–Genoa down 8% and Shanghai–Rotterdam down 5%.",
+      "Carriers were restricting space aggressively: ten sailings cancelled in each of the previous two weeks, with seven more planned for the following week."
+    ],
+    "sources": [
+      "Drewry World Container Index, assessment for 13 August 2026, and Drewry Container Capacity Insight."
+    ],
+    "takeaway": "If you quoted both major corridors off one composite this week you were wrong in both directions — by 10% on the US East Coast and 8% into the Mediterranean. This is the week the year's divergence became impossible to average away, and the point at which lane-level benchmarks stopped being optional."
+  },
+  {
+    "issue": 32,
+    "slug": "index-rebounds-after-three-week-slide",
+    "date": "2026-08-11",
+    "shown": "11 August 2026",
+    "assessed": "6 August 2026",
+    "mins": 3,
+    "headline": "Index rebounds after a three-week slide as transpacific increases stick",
+    "dek": "The first up week since mid-July. Volumes held into August, the increases went through, and congestion in southern China did the rest.",
+    "metaDescription": "Freight Pulse issue 32: Drewry's composite rose 1% to $4,297, ending three weeks of decline, as transpacific GRIs held and Chinese port congestion constrained capacity.",
+    "keywords": [
+      "freight pulse",
+      "container rates early August 2026",
+      "transpacific GRI August",
+      "China port congestion",
+      "Drewry WCI"
+    ],
+    "numbers": [
+      [
+        "Composite",
+        "$4,297",
+        1
+      ],
+      [
+        "Shanghai – Rotterdam",
+        "$4,653",
+        0
+      ],
+      [
+        "Shanghai – Genoa",
+        "$5,506",
+        -2
+      ],
+      [
+        "Shanghai – Los Angeles",
+        "$5,894",
+        3
+      ],
+      [
+        "Shanghai – New York",
+        "$7,893",
+        4
+      ]
+    ],
+    "bullets": [
+      "The composite edged up 1% to $4,297 per 40ft, rebounding after three consecutive weekly declines.",
+      "Transpacific increases held as volumes stayed firm into August: Shanghai–New York up 4%, Shanghai–Los Angeles up 3%.",
+      "Asia–Europe was broadly flat, with Shanghai–Rotterdam unchanged at $4,653 and Shanghai–Genoa easing 2%.",
+      "Port congestion across central and southern China continued to constrain capacity and support rates.",
+      "Eight blank sailings were scheduled for the following week, unchanged on the week, and Drewry expected volatility to reduce."
+    ],
+    "sources": [
+      "Drewry World Container Index, assessment for 6 August 2026, and Drewry Container Capacity Insight."
+    ],
+    "takeaway": "One up week after three down is not a turn. What made this one worth noting was that the increases held rather than eroding within days, which is the actual test of whether carriers have the capacity discipline to make a level stick. They did, and the transpacific ran for another month on it."
+  }
+]
